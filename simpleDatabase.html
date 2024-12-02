@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {text-align: center;}
+        #enterDetails {float: left; width: 50%;  background-color: darkslategray; color: floralwhite;}
+        #findDetails {float: left; width: 50%; background-color: floralwhite; color: darkslategray;}
+        input {width: 120px;}
+    </style>
+</head>
+<body>
+
+    <div id="findDetails">
+        <h1>Bus Tracker</h1>
+        <h3 id="lastStop" type="text"></h3>
+        <h3 id="stopped" type="boolean"></h3> <br><br>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyAyRBlsUI1wZ9eQT8HK2rAQuS3P_jajF4U",
+          authDomain: "dynamic-bus-tracker-16b7a.firebaseapp.com",
+          databaseURL: "https://dynamic-bus-tracker-16b7a-default-rtdb.firebaseio.com",
+          projectId: "dynamic-bus-tracker-16b7a",
+          storageBucket: "dynamic-bus-tracker-16b7a.firebasestorage.app",
+          messagingSenderId: "819026002356",
+          appId: "1:819026002356:web:e33f28ac53c1406c4af2e1"
+        };
+  
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        import {getDatabase, ref, get, set, child, update, remove}
+        from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
+
+        const db = getDatabase();
+
+        function FindData() {
+            const dbref = ref(db);
+
+            // Get last stop
+            get(child(dbref, "/"))
+            .then((snapshot)=>{
+                if(snapshot.exists()){
+                    lastStop.innerHTML = "Most Recent Stop: " + snapshot.val().lastStop;
+                    stopped.innerHTML = "Currently Stopped? " + snapshot.val().stopped;
+                } else {
+                    alert("No data found");
+                }
+            })
+            .catch((error)=>{
+                alert(error)
+            })
+        }
+
+        // Call FindData every 3 seconds
+        setInterval(FindData, 2000);
+
+      </script>
+</body>
+</html>
