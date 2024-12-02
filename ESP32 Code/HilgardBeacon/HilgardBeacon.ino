@@ -1,4 +1,4 @@
-/*
+  /*
    Based on 31337Ghost's reference code from https://github.com/nkolban/esp32-snippets/issues/385#issuecomment-362535434
    which is based on pcbreflux's Arduino ESP32 port of Neil Kolban's example for IDF: https://github.com/nkolban/esp32-snippets/blob/master/cpp_utils/tests/BLE%20Tests/SampleScan.cpp
 */
@@ -18,7 +18,7 @@
 #include <BLE2902.h>
 #include <BLEBeacon.h>
 
-#define DEVICE_NAME "Boelter"
+#define DEVICE_NAME "Hilgard"
 #define SERVICE_UUID "F4CB23F6-9F84-42CC-A0C7-BC265A63D622"
 #define BEACON_UUID "D1FC973B-E5EB-4895-A136-C973165D1E2C"
 #define BEACON_UUID_REV "2C1E5D16-73C9-36A1-9548-EBE53B97FCD1"
