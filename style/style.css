@@ -1,0 +1,158 @@
+/* Prosto One Font */
+.prosto-one-regular {
+    font-family: "Prosto One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}  
+
+
+
+/* Background Rectangle */
+.background-rectangle {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+
+    background: #D6EAFF;
+}
+
+
+
+/* Top Bar */
+.top-bar {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    left: 0px;
+    top: 0px;
+
+    background: #003B6D;
+}
+/* Title Text */
+.title-text {
+    position: absolute;
+    width: 494px;
+    height: 47px;
+    left: 236px;
+    top: 52px;
+
+    font-family: 'Prosto One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 49px;
+
+    color: #D9D9D9;
+}
+/* Logo */
+.logo {
+    position: absolute;
+    width: 175px;
+    height: 100px;
+    left: 40px;
+    top: 25px;
+
+    background: url(images/logo.png);
+}
+
+
+
+/* Most Recent Stop */
+.most-recent-stop {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    width: 500px;
+    height: 150px;
+
+    /* border-style: solid;
+    border-width: 1px; */
+}
+/* Clock */
+.clock {
+    float: left;
+    width: 75px;
+    height: 75px;
+
+    background: url(images/clock.png);
+}
+/* Most Recent Stop Text */
+.most-recent-stop-text {
+    margin-left: 100px;
+    margin-right: auto;
+
+    font-family: 'Prosto One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+
+    color: #000000;
+}
+/* Last Stop */
+.last-stop {
+    height: 40px;
+    margin-left: 100px;
+    margin-right: auto;
+    margin-top: 10px;
+
+    font-family: 'Prosto One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+
+    color: #000000;
+}
+
+
+
+/* Is Stopped */
+.is-stopped {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 150px;
+
+    /* border-style: solid;
+    border-width: 1px; */
+}
+/* Stop */
+.stop {
+    float: left;
+    width: 75px;
+    height: 75px;
+
+    background: url(images/stop.png);
+}
+/* Is Stopped Text */
+.is-stopped-text {
+    margin-left: 100px;
+    margin-right: auto;
+
+    font-family: 'Prosto One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+
+    color: #000000;
+}
+/* Stopped Boolean */
+.stopped-boolean {
+    height: 40px;
+    margin-left: 100px;
+    margin-right: auto;
+    margin-top: 10px;
+
+    font-family: 'Prosto One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+
+    color: #000000;
+}

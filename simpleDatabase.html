@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {text-align: center;}
-        #enterDetails {float: left; width: 50%;  background-color: darkslategray; color: floralwhite;}
-        #findDetails {float: left; width: 50%; background-color: floralwhite; color: darkslategray;}
-        input {width: 120px;}
-    </style>
+    <title>Dynamic Bus Tracker</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Prosto+One&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="background-rectangle"></div>
+    <div>
+        <div class="top-bar"></div>
+        <div class="title-text">Dynamic Bus Tracker</div>
+        <div class="logo"></div>      
+    </div>
 
-    <div id="findDetails">
-        <h1>Bus Tracker</h1>
-        <h3 id="lastStop" type="text"></h3>
-        <h3 id="stopped" type="boolean"></h3> <br><br>
+    <div class="most-recent-stop">
+        <div class="clock"></div>
+        <div class="most-recent-stop-text">Most Recent Stop:</div>
+        <h3 id="lastStop" type="text" class="last-stop"></h3>
+    </div>
+
+    <div class="is-stopped">
+        <div class="stop"></div>
+        <div class="is-stopped-text">Currently Stopped?</div>
+        <h3 id="stopped" type="boolean" class="stopped-boolean"></h3> <br><br>
     </div>
 
     <script type="module">
@@ -50,8 +60,8 @@
             get(child(dbref, "/"))
             .then((snapshot)=>{
                 if(snapshot.exists()){
-                    lastStop.innerHTML = "Most Recent Stop: " + snapshot.val().lastStop;
-                    stopped.innerHTML = "Currently Stopped? " + snapshot.val().stopped;
+                    lastStop.innerHTML = snapshot.val().lastStop;
+                    stopped.innerHTML = snapshot.val().stopped;
                 } else {
                     alert("No data found");
                 }
