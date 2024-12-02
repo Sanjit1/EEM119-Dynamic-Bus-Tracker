@@ -102,7 +102,7 @@ void setup()
     if (Firebase.signUp(&config, &auth, "", ""))
     {
         Serial.println("ok");
-        signup OK = true;
+        signupOK = true;
     }
     else
     {
@@ -136,6 +136,31 @@ void loop()
         {
             Serial.println("FAILED to set last Stop");
             Serial.println("REASON: " + fbdo.errorReason());
+        }
+        // if currentStop is The Middle of Nowhere, write to the stopped boolean: false else true
+        if (currentStop == "The Middle of Nowhere")
+        {
+            if (Firebase.RTDB.setBool(&fbdo, "stopped", false))
+            {
+                Serial.println("Set stopped");
+            }
+            else
+            {
+                Serial.println("FAILED to set stopped");
+                Serial.println("REASON: " + fbdo.errorReason());
+            }
+        }
+        else
+        {
+            if (Firebase.RTDB.setBool(&fbdo, "stopped", true))
+            {
+                Serial.println("Set stopped");
+            }
+            else
+            {
+                Serial.println("FAILED to set stopped");
+                Serial.println("REASON: " + fbdo.errorReason());
+            }
         }
         Serial.println("");
         delay(1500);
