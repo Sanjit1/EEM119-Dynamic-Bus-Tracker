@@ -62,9 +62,9 @@
 
 /* Most Recent Stop */
 .most-recent-stop {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 200px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    float: left;
     width: 500px;
     height: 150px;
 
@@ -112,8 +112,9 @@
 
 /* Is Stopped */
 .is-stopped {
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
+    float: left;
     width: 500px;
     height: 150px;
 
@@ -155,4 +156,25 @@
     line-height: 30px;
 
     color: #000000;
+}
+
+/* Map */
+.map {
+    float: left;
+    width: 500px;
+    height: 500px;
+
+    background: url(images/map.png);
+}
+
+/* Container */
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    width: 1000px;
+    height: 500px;
+
+    /* border-style: solid;
+    border-width: 5px; */
 }
