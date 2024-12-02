@@ -64,8 +64,21 @@
             get(child(dbref, "/"))
             .then((snapshot)=>{
                 if(snapshot.exists()){
+                    let tempLastStop = lastStop.innerHTML;
                     lastStop.innerHTML = snapshot.val().lastStop;
-                    stopped.innerHTML = snapshot.val().stopped;
+                    let tempStopped = stopped.innerHTML;
+                    // stopped.innerHTML = snapshot.val().stopped;
+                    // instead of that, convert to string and capitalize the first letter
+                    stopped.innerHTML =
+                        snapshot
+                            .val()
+                            .stopped.toString()
+                            .charAt(0)
+                            .toUpperCase() +
+                        snapshot.val().stopped.toString().slice(1);
+                    if (tempLastStop != lastStop.innerHTML || tempStopped != stopped.innerHTML) {
+                        alert("New update!");
+                    }
                 } else {
                     alert("No data found");
                 }
